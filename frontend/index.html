@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Asset Tracking Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Smart Asset Tracking <span>for MSMEs</span></h1>
+    <p>Digital Memory Map System</p>
+  </header>
+
+  <main>
+    <!-- Summary cards -->
+    <section class="cards">
+      <div class="card"><div class="num" id="stat-total">-</div><div class="lbl">Total Assets</div></div>
+      <div class="card ok"><div class="num" id="stat-available">-</div><div class="lbl">Available</div></div>
+      <div class="card bad"><div class="num" id="stat-missing">-</div><div class="lbl">Missing</div></div>
+      <div class="card warn"><div class="num" id="stat-alerts">-</div><div class="lbl">Alerts</div></div>
+    </section>
+
+    <!-- Search -->
+    <section class="panel">
+      <h2>Find an Asset</h2>
+      <div class="filters">
+        <input id="q" type="text" placeholder="Search asset name or ID...">
+        <select id="category">
+          <option value="">All categories</option>
+          <option>Tool</option><option>Equipment</option>
+          <option>Raw Material</option><option>Finished Good</option>
+        </select>
+        <select id="zone">
+          <option value="">All zones</option>
+          <option>Zone A</option><option>Zone B</option>
+          <option>Zone C</option><option>Zone D</option>
+        </select>
+        <select id="status">
+          <option value="">Any status</option>
+          <option>Available</option><option>Missing</option>
+          <option>Idle</option><option>In Use</option>
+        </select>
+        <input id="date" type="date" title="Last seen on this date">
+        <button id="clear">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Category</th><th>Camera</th>
+              <th>Last Seen Location</th><th>Last Seen Time</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="asset-rows"></tbody>
+        </table>
+      </div>
+      <p class="hint">Click a row to see the movement history of that asset.</p>
+    </section>
+
+    <div class="two-col">
+      <!-- History -->
+      <section class="panel">
+        <h2>Asset History</h2>
+        <div id="history"><p class="hint">Select an asset above.</p></div>
+      </section>
+
+      <!-- Alerts -->
+      <section class="panel">
+        <h2>Alerts</h2>
+        <div id="alerts"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
