@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Database files
+*.db
+*.sqlite3
+
+# Large model weights / videos
+*.pt
+*.mp4
+*.avi
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
